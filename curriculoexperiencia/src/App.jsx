@@ -5,6 +5,7 @@ function App() {
   const fullName = "Bruno Melo =)"
   const [displayedName, setDisplayedName] = useState('')
   const [selectedCompany, setSelectedCompany] = useState(null)
+  const [selectedAboutTab, setSelectedAboutTab] = useState('resumo')
 
   const experiences = {
     'ATOM Lab': {
@@ -136,34 +137,51 @@ function App() {
       </section>
       <section className="about-section">
         <h2 className="about-title">Sobre mim:</h2>
+        <div className="about-tabs">
+          <button
+            className={`about-tab-button ${selectedAboutTab === 'resumo' ? 'active' : ''}`}
+            onClick={() => setSelectedAboutTab('resumo')}
+          >
+            {selectedAboutTab === 'resumo' && <span className="pipe-indicator">|</span>}
+            Resumo
+          </button>
+          <button
+            className={`about-tab-button ${selectedAboutTab === 'skills' ? 'active' : ''}`}
+            onClick={() => setSelectedAboutTab('skills')}
+          >
+            {selectedAboutTab === 'skills' && <span className="pipe-indicator">|</span>}
+            Minhas Skills
+          </button>
+        </div>
         <div className="about-content">
           <div className="about-text">
-
-            <p>Sou formado em Análise e Desenvolvimento de Sistemas e atualmente cursando Bacharelado em Engenharia de Software.</p>
-            <p>
-              Com mais de 7 anos de experiência em desenvolvimento de software, dedico os últimos 3 anos ao desenvolvimento fullstack, especializando-me na criação de <span className="highlight-red">microserviços</span> e <span className="highlight-red">APIs</span> robustas.
-            </p>
-            <p>
-              No backend, trabalho com frameworks modernos como <strong>Spring Boot</strong> (Java) e <strong>FastAPI</strong> (Python), desenvolvendo soluções escaláveis e de alta performance. No frontend, utilizo <strong>ReactJS</strong> com <strong>Tailwind CSS</strong> e <strong>styled-components</strong>, além de <strong>HTML</strong> e <strong>CSS</strong> para criar interfaces modernas e responsivas.
-            </p>
-            <p>
-              Minha experiência abrange desde a arquitetura de sistemas até a implementação de integrações complexas, sempre buscando entregar código limpo, eficiente e alinhado com as melhores práticas do mercado.
-            </p>
-            <p style={{ marginTop: '1.5rem', fontSize: '1rem', color: '#333' }}>
-              Minhas skills:
-            </p>
-            <div style={{ marginTop: '1rem', marginBottom: '1.5rem' }}>
-              <div style={{ marginBottom: '1rem' }}>
-                {['Python', 'FastAPI', 'NodeJS', 'Baileys', 'SQL', 'Git', 'Docker', 'Spring Boot', 'NestJS', 'AWS', 'React', 'Tailwind', 'React Router', 'Java', 'Linux', 'Windows', 'SQL Server', 'Tomcat', 'Zabbix', 'styled-components', 'HTML', 'CSS', 'JavaScript', 'PHP'].map((tech, index) => (
-                  <span key={index} className="tech-tag" style={{ marginRight: '0.5rem', marginBottom: '0.5rem', display: 'inline-block' }}>{tech}</span>
-                ))}
+            {selectedAboutTab === 'resumo' ? (
+              <>
+                <p>Sou formado em Análise e Desenvolvimento de Sistemas e atualmente cursando Bacharelado em Engenharia de Software.</p>
+                <p>
+                  Com mais de 7 anos de experiência em desenvolvimento de software, dedico os últimos 3 anos ao desenvolvimento fullstack, especializando-me na criação de <span className="highlight-red">microserviços</span> e <span className="highlight-red">APIs</span> robustas.
+                </p>
+                <p>
+                  No backend, trabalho com frameworks modernos como <strong>Spring Boot</strong> (Java) e <strong>FastAPI</strong> (Python), desenvolvendo soluções escaláveis e de alta performance. No frontend, utilizo <strong>ReactJS</strong> com <strong>Tailwind CSS</strong> e <strong>styled-components</strong>, além de <strong>HTML</strong> e <strong>CSS</strong> para criar interfaces modernas e responsivas.
+                </p>
+                <p>
+                  Minha experiência abrange desde a arquitetura de sistemas até a implementação de integrações complexas, sempre buscando entregar código limpo, eficiente e alinhado com as melhores práticas do mercado.
+                </p>
+              </>
+            ) : (
+              <div style={{ marginTop: '1rem', marginBottom: '1.5rem' }}>
+                <div style={{ marginBottom: '1rem' }}>
+                  {['Python', 'FastAPI', 'NodeJS', 'Baileys', 'SQL', 'Git', 'Docker', 'Spring Boot', 'NestJS', 'AWS', 'React', 'Tailwind', 'React Router', 'Java', 'Linux', 'Windows', 'SQL Server', 'Tomcat', 'Zabbix', 'styled-components', 'HTML', 'CSS', 'JavaScript', 'PHP'].map((tech, index) => (
+                    <span key={index} className="tech-tag" style={{ marginRight: '0.5rem', marginBottom: '0.5rem', display: 'inline-block' }}>{tech}</span>
+                  ))}
+                </div>
+                <div>
+                  {['Liderança', 'Comunicação', 'Resiliência', 'Resolução de problemas', 'Pensamento crítico', 'Pensamento analítico', 'Inteligência emocional'].map((skill, index) => (
+                    <span key={index} className="tech-tag" style={{ marginRight: '0.5rem', marginBottom: '0.5rem', display: 'inline-block' }}>{skill}</span>
+                  ))}
+                </div>
               </div>
-              <div>
-                {['Liderança', 'Comunicação', 'Resiliência', 'Resolução de problemas', 'Pensamento crítico', 'Pensamento analítico', 'Inteligência emocional'].map((skill, index) => (
-                  <span key={index} className="tech-tag" style={{ marginRight: '0.5rem', marginBottom: '0.5rem', display: 'inline-block' }}>{skill}</span>
-                ))}
-              </div>
-            </div>
+            )}
           </div>
           <div className="about-photo">
             <img src="/perfil.png" alt="Bruno Melo" />
