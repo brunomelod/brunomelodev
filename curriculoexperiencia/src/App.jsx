@@ -149,6 +149,21 @@ function App() {
             <p>
               Minha experiência abrange desde a arquitetura de sistemas até a implementação de integrações complexas, sempre buscando entregar código limpo, eficiente e alinhado com as melhores práticas do mercado.
             </p>
+            <p style={{ marginTop: '1.5rem', fontSize: '1rem', color: '#333' }}>
+              Minhas skills:
+            </p>
+            <div style={{ marginTop: '1rem', marginBottom: '1.5rem' }}>
+              <div style={{ marginBottom: '1rem' }}>
+                {['Python', 'FastAPI', 'NodeJS', 'Baileys', 'SQL', 'Git', 'Docker', 'Spring Boot', 'NestJS', 'AWS', 'React', 'Tailwind', 'React Router', 'Java', 'Linux', 'Windows', 'SQL Server', 'Tomcat', 'Zabbix', 'styled-components', 'HTML', 'CSS', 'JavaScript', 'PHP'].map((tech, index) => (
+                  <span key={index} className="tech-tag" style={{ marginRight: '0.5rem', marginBottom: '0.5rem', display: 'inline-block' }}>{tech}</span>
+                ))}
+              </div>
+              <div>
+                {['Liderança', 'Comunicação', 'Resiliência', 'Resolução de problemas', 'Pensamento crítico', 'Pensamento analítico', 'Inteligência emocional'].map((skill, index) => (
+                  <span key={index} className="tech-tag" style={{ marginRight: '0.5rem', marginBottom: '0.5rem', display: 'inline-block' }}>{skill}</span>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="about-photo">
             <img src="/perfil.png" alt="Bruno Melo" />
