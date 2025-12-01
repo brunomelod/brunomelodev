@@ -81,6 +81,21 @@
   height: 24px;
 }
 
+/* Responsividade do header - esconde textos em mobile */
+@media (max-width: 768px) {
+  .icon-link span {
+    display: none;
+  }
+  
+  .social-icons {
+    gap: 1rem;
+  }
+  
+  .header {
+    padding: 1rem;
+  }
+}
+
 .intro-section {
   display: flex;
   flex-direction: column;
