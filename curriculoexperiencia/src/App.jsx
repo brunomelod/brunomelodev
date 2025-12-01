@@ -138,6 +138,8 @@ function App() {
         <h2 className="about-title">Sobre mim:</h2>
         <div className="about-content">
           <div className="about-text">
+
+            <p>Sou formado em Análise e Desenvolvimento de Sistemas e atualmente cursando Bacharelado em Engenharia de Software.</p>
             <p>
               Com mais de 7 anos de experiência em desenvolvimento de software, dedico os últimos 3 anos ao desenvolvimento fullstack, especializando-me na criação de <span className="highlight-red">microserviços</span> e <span className="highlight-red">APIs</span> robustas.
             </p>
