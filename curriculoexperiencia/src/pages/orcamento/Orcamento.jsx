@@ -57,9 +57,8 @@ function Orcamento() {
         {
           from_name: formData.nome,
           from_email: formData.email,
-          telefone: telefone,
-          demanda: formData.demanda,
-          to_email: 'brunomelodesenvolvedor@gmail.com'
+          phone_number: telefone,
+          message: formData.demanda
         },
         EMAILJS_CONFIG.publicKey
       )
