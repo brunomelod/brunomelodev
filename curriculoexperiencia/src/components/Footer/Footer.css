@@ -1,0 +1,22 @@
+.footer {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff;
+  margin-top: 4rem;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #000000;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #999;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+

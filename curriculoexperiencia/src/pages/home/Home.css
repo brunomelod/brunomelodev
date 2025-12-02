@@ -1,0 +1,593 @@
+.curriculo-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding-top: 80px; /* Compensa o header fixo */
+}
+
+.section-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.section-arrow svg {
+  width: 40px;
+  height: 40px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Estilos do header foram movidos para components/Header.css */
+
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.intro-text {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.name {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #666;
+  margin: -1rem 0 0 0;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 0.5rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.highlight-red {
+  color: #ff6b35;
+}
+
+.email-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.email-button:hover {
+  background-color: #333333;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 0.2rem;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.about-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.about-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-tab-button {
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  color: #666;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-tab-button:hover {
+  color: #333;
+}
+
+.about-tab-button.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-photo {
+  flex: 0 0 300px;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-photo {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+.experience-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.experience-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.experience-companies {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company-button {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  color: #666;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.company-button:hover {
+  color: #333;
+}
+
+.company-button.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.pipe-indicator {
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.experience-details {
+  flex: 1;
+  min-height: 200px;
+}
+
+.experience-info {
+  text-align: left;
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 0.25rem;
+}
+
+.company-website {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.experience-period {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.experience-description {
+  margin-bottom: 1.5rem;
+}
+
+.experience-text {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.bullet-arrow {
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.experience-text:last-child {
+  margin-bottom: 0;
+}
+
+.experience-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #f0f0f0;
+  color: #666;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.experience-placeholder {
+  color: #999;
+  font-style: italic;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .experience-content {
+    flex-direction: column;
+  }
+  
+  .experience-companies {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+.education-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.education-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.education-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.education-items {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  }
+
+.education-button {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  color: #666;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.education-button:hover {
+  color: #333;
+}
+
+.education-button.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.education-details {
+  flex: 1;
+  min-height: 200px;
+  }
+
+.education-info {
+  text-align: left;
+}
+
+.education-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 0.25rem;
+}
+
+.education-period {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.education-institution {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.education-grade {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.education-competencies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.education-competencies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.competency-section {
+  margin-bottom: 0;
+}
+
+.competency-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.competency-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.competency-tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #f0f0f0;
+  color: #666;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.competencies-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.education-description {
+  margin-bottom: 1.5rem;
+}
+
+.education-text {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.education-text:last-child {
+  margin-bottom: 0;
+}
+
+.checkmark {
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.competency-group {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.competency-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.competency-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 1rem;
+  }
+
+.competency-details {
+  margin-bottom: 1rem;
+}
+
+.competency-detail {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.competency-detail:last-child {
+  margin-bottom: 0;
+}
+
+.competency-disciplines {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.disciplines-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.discipline-item {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+.discipline-item:last-child {
+  margin-bottom: 0;
+}
+
+.education-placeholder {
+  color: #999;
+  font-style: italic;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .education-content {
+    flex-direction: column;
+  }
+  
+  .education-items {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+/* Estilos do footer foram movidos para components/Footer.css */
+
