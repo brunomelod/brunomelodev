@@ -39,6 +39,14 @@ function Orcamento() {
   }, [])
 
   const handleButtonClick = () => {
+    // Rastreia evento InitiateCheckout no Meta Pixel
+    if (window.fbq) {
+      window.fbq('track', 'InitiateCheckout', {
+        content_name: 'Solicitação de Orçamento',
+        content_category: 'Serviços'
+      });
+    }
+
     setIsAnimating(true)
     setTimeout(() => {
       setShowForm(true)

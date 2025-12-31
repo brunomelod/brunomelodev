@@ -94,6 +94,16 @@ function Home() {
     return () => clearInterval(typingInterval)
   }, [])
 
+  const handleEmailClick = () => {
+    // Rastreia evento Contact no Meta Pixel
+    if (window.fbq) {
+      window.fbq('track', 'Contact', {
+        content_name: 'Contato por Email',
+        content_category: 'Contato Direto'
+      });
+    }
+  }
+
   return (
     <div className="curriculo-page">
       <Header />
@@ -106,7 +116,7 @@ function Home() {
         <p className="description">
           Eu sou um engenheiro de software e desenvolvedor fullstack <span className="highlight-red">apaixonado</span> por <span className="highlight-red">tecnologia</span>.
         </p>
-        <a href="mailto:brunomelod@gmail.com" className="email-button">
+        <a href="mailto:brunomelod@gmail.com" className="email-button" onClick={handleEmailClick}>
           Me envie um e-mail!
         </a>
       </section>
