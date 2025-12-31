@@ -63,6 +63,14 @@ function Orcamento() {
         EMAILJS_CONFIG.publicKey
       )
 
+      // Rastreia evento Lead no Meta Pixel
+      if (window.fbq) {
+        window.fbq('track', 'Lead', {
+          content_name: 'Formulário de Orçamento',
+          content_category: 'Contato'
+        });
+      }
+
       // Se o envio foi bem-sucedido, mostra a mensagem de sucesso
       setShowForm(false)
       setShowSuccess(true)
