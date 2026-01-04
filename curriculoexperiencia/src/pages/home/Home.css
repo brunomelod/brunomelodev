@@ -322,6 +322,19 @@
   margin-bottom: 0.25rem;
 }
 
+.company-name.pulse-link {
+  animation: pulseFont 1s ease-in-out infinite;
+}
+
+@keyframes pulseFont {
+  0%, 100% {
+    font-size: 1.5rem;
+  }
+  50% {
+    font-size: 1.3rem;
+  }
+}
+
 .company-website {
   color: #666;
   font-size: 0.9rem;

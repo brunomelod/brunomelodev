@@ -100,7 +100,7 @@ export const projectsButton = {
   'Java & Spring Boot': {
     description: [
       <a key="link-spring-boot-course" href="https://www.youtube.com/watch?v=uT_AT0bDUQQ&list=PLChWda6UqRfBjQsFxBy3DGaHtE07HVFhi&index=7" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none' }}>
-        Meu curso CRUD com spring boot
+        youtube.com/meu-curso-springboot
       </a>,
       'Criei uma playlist completa de curso do zero sobre desenvolvimento de CRUD com Spring Boot. O curso cobre desde a criação do projeto no Spring Initializr, configuração do banco de dados H2 para desenvolvimento local, toda a configuração necessária, até a implementação completa de operações CRUD (Create, Read, Update, Delete).',
       'O curso aborda conceitos fundamentais do Spring Boot, incluindo configuração de dependências, estruturação de projetos, criação de entidades, repositórios, serviços, controladores REST, validação de dados, uso de Lombok na prática e boas práticas de desenvolvimento com Java e Spring Framework.',
