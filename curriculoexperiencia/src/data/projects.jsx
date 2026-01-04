@@ -77,6 +77,26 @@ export const projectsButton = {
       'A arquitetura utiliza Node.js com a biblioteca Baileys para integração nativa com WhatsApp Web, permitindo comunicação automatizada através de múltiplas instâncias. A documentação é gerada automaticamente via FastAPI (Swagger/OpenAPI), enquanto toda a lógica de negócio e integração com WhatsApp é implementada em Node.js utilizando Baileys, seguindo padrões REST e implementando validação de dados robusta e gerenciamento de sessões eficiente.',
     ],
   },
+  'HTML & CSS': {
+    description: [
+      <a key="link-consulta-optante" href="https://www.esimplesauditoria.com/consulta-optante-simples-nacional" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none' }}>
+        esimplesauditoria.com/consulta-optante-simples-nacional
+      </a>,
+      'Desenvolvi uma página de consulta de optantes pelo Simples Nacional utilizando HTML e CSS, criando uma interface moderna e responsiva. A página permite que os usuários consultem se uma empresa é ou não optante do Simples Nacional de forma rápida e gratuita, através de um campo de entrada para CNPJ e botões de ação (Consultar e Limpar).',
+      'Implementei integração com API para buscar e exibir os dados da empresa em tempo real, incluindo informações sobre situação atual no Simples Nacional, períodos anteriores de opção, eventos futuros e histórico completo. A interface apresenta os resultados de forma organizada e clara, facilitando a compreensão das informações fiscais.',
+      <a key="link-consulta-cnpj" href="https://www.esimplesauditoria.com/consulta-cnpj" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
+        esimplesauditoria.com/consulta-cnpj
+      </a>,
+      'Desenvolvi uma página de consulta de CNPJ utilizando HTML e CSS, criando uma interface moderna e responsiva. A página permite que os usuários consultem o cartão CNPJ, o comprovante de inscrição e a situação cadastral de uma empresa de forma rápida e gratuita.',
+      'Implementei integração com API para buscar e exibir os dados completos da empresa em tempo real, incluindo razão social, nome fantasia, data de abertura, status, endereço, telefone, email, atividade principal, CNAEs secundárias, capital social, natureza jurídica, porte, situação no Simples Nacional, situação no MEI e informações de sócios.',
+      'Desenvolvi funcionalidade de geração de PDF com todas as informações da empresa consultada, permitindo que os usuários salvem e compartilhem os dados de forma documentada e profissional.',
+      <a key="link-consulta-ncm" href="https://www.esimplesauditoria.com/consulta-ncm" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
+        esimplesauditoria.com/consulta-ncm
+      </a>,
+      'Desenvolvi uma página de consulta de NCM (Nomenclatura Comum do Mercosul) utilizando HTML e CSS, criando uma interface moderna e responsiva. A página permite que os usuários consultem todos os NCMs existentes e suas descrições de forma rápida e gratuita, através de um campo de pesquisa que permite buscar por código NCM ou palavra-chave da descrição.',
+      'Implementei integração com API para buscar e exibir os dados dos códigos NCM em tempo real, incluindo a hierarquia completa: capítulo, posição, subposição e item detalhado. A interface apresenta os resultados de forma organizada, facilitando a classificação fiscal e garantindo conformidade tributária nas operações comerciais.',
+    ],
+  },
   'Java & Spring Boot': {
     description: [
       <a key="link-spring-boot-course" href="https://www.youtube.com/watch?v=uT_AT0bDUQQ&list=PLChWda6UqRfBjQsFxBy3DGaHtE07HVFhi&index=7" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none' }}>

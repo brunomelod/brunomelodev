@@ -10,7 +10,7 @@ function Home() {
   const [displayedName, setDisplayedName] = useState('')
   const [selectedCompany, setSelectedCompany] = useState(null)
   const [selectedAboutTab, setSelectedAboutTab] = useState('resumo')
-  const [selectedProject, setSelectedProject] = useState('Java & Spring Boot')
+  const [selectedProject, setSelectedProject] = useState('HTML & CSS')
   const [expandedProjects, setExpandedProjects] = useState({})
   const [hasAnimated, setHasAnimated] = useState({})
 
@@ -37,7 +37,7 @@ function Home() {
   }, [])
 
   useEffect(() => {
-    const projectsToAnimate = ['Python & FastAPI', 'React & Tailwind CSS']
+    const projectsToAnimate = ['HTML & CSS', 'Python & FastAPI', 'React & Tailwind CSS']
     
     if (!projectsToAnimate.includes(selectedProject)) return
 
@@ -73,7 +73,7 @@ function Home() {
   const toggleProjectExpansion = (projectKey, itemIndex) => {
     const key = `${projectKey}-${itemIndex}`
     
-    const projectsToAnimate = ['Python & FastAPI', 'React & Tailwind CSS']
+    const projectsToAnimate = ['HTML & CSS', 'Python & FastAPI', 'React & Tailwind CSS']
     if (projectsToAnimate.includes(projectKey) && itemIndex === 0) {
       const projectAnimatedKey = `animated-${projectKey}`
       setHasAnimated(prev => {
