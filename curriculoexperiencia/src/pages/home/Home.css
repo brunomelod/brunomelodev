@@ -469,6 +469,15 @@
     flex: 1;
     width: 100%;
   }
+  
+  .projects-content {
+    flex-direction: column;
+  }
+  
+  .projects-companies {
+    flex: 1;
+    width: 100%;
+  }
 }
 
 .education-section {
