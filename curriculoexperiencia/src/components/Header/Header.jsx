@@ -1,9 +1,13 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useLanguage } from '../../contexts/LanguageContext'
+import { getTranslation } from '../../translations'
 import './Header.css'
 
 function Header() {
   const location = useLocation()
+  const { language, toggleLanguage } = useLanguage()
   const isOrcamentoPage = location.pathname === '/orcamento'
+  const t = (path) => getTranslation(language, path)
 
   return (
     <header className="header">
@@ -38,7 +42,7 @@ function Header() {
               <circle cx="12" cy="8" r="4" fill="currentColor"/>
               <path d="M6 21c0-3.314 2.686-6 6-6s6 2.686 6 6" fill="currentColor"/>
             </svg>
-            <span>Sobre mim</span>
+            <span>{t('header.about')}</span>
           </Link>
         ) : (
           <Link to="/orcamento" className="icon-link">
@@ -51,9 +55,106 @@ function Header() {
               <line x1="8" y1="18" x2="14" y2="18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
               <text x="15.5" y="17.5" fontFamily="system-ui, -apple-system, sans-serif" fontSize="12" fontWeight="700" fill="currentColor">$</text>
             </svg>
-            <span>Orçamento</span>
+            <span>{t('header.budget')}</span>
           </Link>
         )}
+        <div className="language-selector-container">
+          <button 
+            onClick={() => language !== 'pt-BR' && toggleLanguage()}
+            className={`language-flag-button ${language === 'pt-BR' ? 'active' : ''}`}
+            aria-label="Português"
+          >
+            <svg className="flag-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <clipPath id="circleClipBR">
+                  <circle cx="10" cy="10" r="10"/>
+                </clipPath>
+              </defs>
+              <g clipPath="url(#circleClipBR)">
+                <rect width="20" height="20" fill="#009739"/>
+                <path d="M10 2.5L3.5 10L10 17.5L16.5 10L10 2.5Z" fill="#FEDD00"/>
+                <circle cx="10" cy="10" r="3.5" fill="#002776"/>
+                <path d="M7.5 10L8.5 10.5L9 9.5L8 9L7.5 10Z" fill="#FFFFFF"/>
+                <path d="M10 7.5L10.5 9L11.5 8.5L10.5 8L10 7.5Z" fill="#FFFFFF"/>
+                <path d="M12.5 10L11.5 10.5L12 9.5L13 9L12.5 10Z" fill="#FFFFFF"/>
+                <path d="M10 12.5L9.5 11L8.5 11.5L9.5 12L10 12.5Z" fill="#FFFFFF"/>
+                <path d="M10 10L9.5 9.5L10 9L10.5 9.5L10 10Z" fill="#FFFFFF"/>
+                <path d="M7.5 10.5L8 11L8.5 10.5L8 10L7.5 10.5Z" fill="#FFFFFF"/>
+                <path d="M12.5 10.5L12 11L11.5 10.5L12 10L12.5 10.5Z" fill="#FFFFFF"/>
+                <path d="M10 7L9.5 7.5L10 8L10.5 7.5L10 7Z" fill="#FFFFFF"/>
+                <path d="M10 13L9.5 12.5L10 12L10.5 12.5L10 13Z" fill="#FFFFFF"/>
+              </g>
+            </svg>
+          </button>
+          <button 
+            onClick={() => language !== 'en-US' && toggleLanguage()}
+            className={`language-flag-button ${language === 'en-US' ? 'active' : ''}`}
+            aria-label="English"
+          >
+            <svg className="flag-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <clipPath id="circleClipUS">
+                  <circle cx="10" cy="10" r="10"/>
+                </clipPath>
+              </defs>
+              <g clipPath="url(#circleClipUS)">
+                <rect width="20" height="20" fill="#B22234"/>
+                <rect y="1.54" width="20" height="1.54" fill="#FFFFFF"/>
+                <rect y="4.62" width="20" height="1.54" fill="#FFFFFF"/>
+                <rect y="7.7" width="20" height="1.54" fill="#FFFFFF"/>
+                <rect y="10.78" width="20" height="1.54" fill="#FFFFFF"/>
+                <rect y="13.86" width="20" height="1.54" fill="#FFFFFF"/>
+                <rect y="16.94" width="20" height="1.54" fill="#FFFFFF"/>
+                <rect width="7.7" height="7.7" fill="#3C3B6E"/>
+                <circle cx="1.5" cy="1.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="2.5" cy="1.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="3.5" cy="1.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="4.5" cy="1.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="5.5" cy="1.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="6.5" cy="1.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="1" cy="2.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="2" cy="2.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="3" cy="2.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="4" cy="2.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="5" cy="2.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="6" cy="2.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="7" cy="2.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="1.5" cy="3.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="2.5" cy="3.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="3.5" cy="3.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="4.5" cy="3.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="5.5" cy="3.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="6.5" cy="3.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="1" cy="4.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="2" cy="4.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="3" cy="4.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="4" cy="4.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="5" cy="4.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="6" cy="4.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="7" cy="4.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="1.5" cy="5.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="2.5" cy="5.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="3.5" cy="5.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="4.5" cy="5.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="5.5" cy="5.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="6.5" cy="5.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="1" cy="6.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="2" cy="6.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="3" cy="6.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="4" cy="6.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="5" cy="6.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="6" cy="6.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="7" cy="6.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="1.5" cy="7.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="2.5" cy="7.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="3.5" cy="7.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="4.5" cy="7.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="5.5" cy="7.5" r="0.3" fill="#FFFFFF"/>
+                <circle cx="6.5" cy="7.5" r="0.3" fill="#FFFFFF"/>
+              </g>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
   )

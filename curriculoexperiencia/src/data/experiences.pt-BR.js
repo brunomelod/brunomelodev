@@ -1,13 +1,4 @@
-export const experiences = {
-  'ATOM Lab': {
-    period: 'NOV 2025 - ATÉ O MOMENTO',
-    description: [
-      'Desenvolvi e implementei CRM completo e Sistema de Gestão para clientes da ATOM Lab, criando soluções personalizadas que otimizam processos internos e melhoram a experiência do cliente.',
-      'Arquitetei e desenvolvi novos módulos de serviço utilizando React e Tailwind CSS, implementando interfaces funcionais, consistentes e orientadas a boas práticas de UX/UI Design, garantindo maior usabilidade, acessibilidade e eficiência na experiência do usuário.',
-      'Migrei sistemas legados em PHP para uma arquitetura moderna baseada em React com Tailwind CSS, incluindo a implementação completa do backend do zero em Python/FastAPI, seguindo padrões REST, princípios SOLID e boas práticas de escalabilidade, performance e manutenibilidade.'
-    ],
-    technologies: ['Python', 'FastAPI', 'NodeJS', 'Baileys', 'SQL', 'Git', 'Docker', 'Spring Boot', 'NestJS', 'AWS', 'React', 'Tailwind']
-  },
+export const experiencesPT = {
   'é-Simples Auditoria': {
     period: 'OUT 2024 - ATÉ O MOMENTO',
     website: 'www.esimplesauditoria.com',
@@ -32,6 +23,15 @@ export const experiences = {
       'Gerenciei controle de versão utilizando Git, aplicando metodologias de versionamento semântico, branching strategies e workflows de colaboração em equipe, assegurando rastreabilidade e qualidade do código.'
     ],
     technologies: ['Python', 'FastAPI', 'React', 'React Router', 'Tailwind', 'Git', 'SQL']
+  },
+  'ATOM Lab': {
+    period: 'NOV 2024 - JAN 2025',
+    description: [
+      'Desenvolvi e implementei CRM completo e Sistema de Gestão para clientes da ATOM Lab, criando soluções personalizadas que otimizam processos internos e melhoram a experiência do cliente.',
+      'Arquitetei e desenvolvi novos módulos de serviço utilizando React e Tailwind CSS, implementando interfaces funcionais, consistentes e orientadas a boas práticas de UX/UI Design, garantindo maior usabilidade, acessibilidade e eficiência na experiência do usuário.',
+      'Migrei sistemas legados em PHP para uma arquitetura moderna baseada em React com Tailwind CSS, incluindo a implementação completa do backend do zero em Python/FastAPI, seguindo padrões REST, princípios SOLID e boas práticas de escalabilidade, performance e manutenibilidade.'
+    ],
+    technologies: ['Python', 'FastAPI', 'NodeJS', 'Baileys', 'SQL', 'Git', 'Docker', 'Spring Boot', 'NestJS', 'AWS', 'React', 'Tailwind']
   },
   'Embrasac (DevOps)': {
     period: 'ABR 2021 - JUN 2022',
@@ -58,6 +58,3 @@ export const experiences = {
     technologies: ['Java', 'Linux', 'Windows', 'SQL Server', 'Tomcat', 'Zabbix', 'Git']
   }
 }
-
-
-

@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
-import { experiences } from '../../data/experiences'
-import { projectsButton } from '../../data/projects'
+import { experiencesPT } from '../../data/experiences.pt-BR'
+import { experiencesEN } from '../../data/experiences.en-US'
+import { getProjectsByLanguage } from '../../data/projects.translations.jsx'
+import { useLanguage } from '../../contexts/LanguageContext'
+import { getTranslation } from '../../translations'
 import './Home.css'
 
 function Home() {
+  const { language } = useLanguage()
+  const t = (path) => getTranslation(language, path)
   const fullName = "Bruno Melo =)"
   const [displayedName, setDisplayedName] = useState('')
   const [selectedCompany, setSelectedCompany] = useState(null)
@@ -14,13 +19,17 @@ function Home() {
   const [expandedProjects, setExpandedProjects] = useState({})
   const [hasAnimated, setHasAnimated] = useState({})
 
+  const experiences = language === 'pt-BR' ? experiencesPT : experiencesEN
+  const projectsButton = getProjectsByLanguage(language)
   const companies = Object.keys(experiences)
 
   useEffect(() => {
     if (!selectedCompany && companies.length > 0) {
       setSelectedCompany(companies[0])
+    } else if (selectedCompany && !companies.includes(selectedCompany) && companies.length > 0) {
+      setSelectedCompany(companies[0])
     }
-  }, [selectedCompany, companies])
+  }, [selectedCompany, companies, language])
 
   useEffect(() => {
     let currentIndex = 0
@@ -59,7 +68,7 @@ function Home() {
     return () => {
       clearTimeout(timer)
     }
-  }, [selectedProject, hasAnimated])
+  }, [selectedProject, hasAnimated, projectsButton])
 
   const handleEmailClick = () => {
     if (window.fbq) {
@@ -128,60 +137,60 @@ function Home() {
     <div className="curriculo-page">
       <Header />
       <section className="intro-section">
-        <p className="intro-text">Oi, tudo bem? Eu sou o</p>
+        <p className="intro-text">{t('intro.greeting')}</p>
         <h1 className="name">
           {displayedName}
           <span className="cursor">|</span>
         </h1>
         <p className="description">
-          Eu sou um engenheiro de software e desenvolvedor fullstack <span className="highlight-red">apaixonado</span> por <span className="highlight-red">tecnologia</span>.
+          {t('intro.description')} <span className="highlight-red">{t('intro.passionate')}</span> {language === 'pt-BR' ? 'por' : 'about'} <span className="highlight-red">{t('intro.technology')}</span>.
         </p>
         <a href="mailto:brunomelod@gmail.com" className="email-button" onClick={handleEmailClick}>
-          Me envie um e-mail!
+          {t('intro.emailButton')}
         </a>
       </section>
       <section className="about-section">
-        <h2 className="about-title">Sobre mim:</h2>
+        <h2 className="about-title">{t('about.title')}</h2>
         <div className="about-tabs">
           <button
             className={`about-tab-button ${selectedAboutTab === 'resumo' ? 'active' : ''}`}
             onClick={() => setSelectedAboutTab('resumo')}
           >
             {selectedAboutTab === 'resumo' && <span className="pipe-indicator">|</span>}
-            Resumo
+            {t('about.tabs.resumo')}
           </button>
           <button
             className={`about-tab-button ${selectedAboutTab === 'skills' ? 'active' : ''}`}
             onClick={() => setSelectedAboutTab('skills')}
           >
             {selectedAboutTab === 'skills' && <span className="pipe-indicator">|</span>}
-            Minhas Skills
+            {t('about.tabs.skills')}
           </button>
         </div>
         <div className="about-content">
           <div className="about-text">
             {selectedAboutTab === 'resumo' ? (
               <>
-                <p>Sou formado em Análise e Desenvolvimento de Sistemas e atualmente cursando Bacharelado em Engenharia de Software.</p>
+                <p>{t('about.resumo.p1')}</p>
                 <p>
-                  Com mais de 7 anos de experiência em desenvolvimento de software, dedico os últimos 3 anos ao desenvolvimento fullstack, especializando-me na criação de <span className="highlight-red">microserviços</span> e <span className="highlight-red">APIs</span> robustas.
+                  {t('about.resumo.p2')} <span className="highlight-red">{t('about.highlights.microservices')}</span> {language === 'pt-BR' ? 'e' : 'and'} <span className="highlight-red">{t('about.highlights.apis')}</span> {language === 'pt-BR' ? 'robustas' : 'robust'}.
                 </p>
                 <p>
-                  No backend, trabalho com frameworks modernos como <strong>Spring Boot</strong> (Java) e <strong>FastAPI</strong> (Python), desenvolvendo soluções escaláveis e de alta performance. No frontend, utilizo <strong>ReactJS</strong> com <strong>Tailwind CSS</strong> e <strong>styled-components</strong>, além de <strong>HTML</strong> e <strong>CSS</strong> para criar interfaces modernas e responsivas.
+                  {language === 'pt-BR' ? 'No backend, trabalho com frameworks modernos como' : 'On the backend, I work with modern frameworks like'} <strong>{t('about.highlights.springBoot')}</strong> {language === 'pt-BR' ? '(Java) e' : '(Java) and'} <strong>{t('about.highlights.fastapi')}</strong> {language === 'pt-BR' ? '(Python), desenvolvendo soluções escaláveis e de alta performance. No frontend, utilizo' : '(Python), developing scalable and high-performance solutions. On the frontend, I use'} <strong>{t('about.highlights.reactjs')}</strong> {language === 'pt-BR' ? 'com' : 'with'} <strong>{t('about.highlights.tailwind')}</strong> {language === 'pt-BR' ? 'e' : 'and'} <strong>{t('about.highlights.styledComponents')}</strong>, {language === 'pt-BR' ? 'além de' : 'in addition to'} <strong>{t('about.highlights.html')}</strong> {language === 'pt-BR' ? 'e' : 'and'} <strong>{t('about.highlights.css')}</strong> {language === 'pt-BR' ? 'para criar interfaces modernas e responsivas.' : 'to create modern and responsive interfaces.'}
                 </p>
                 <p>
-                  Minha experiência abrange desde a arquitetura de sistemas até a implementação de integrações complexas, sempre buscando entregar código limpo, eficiente e alinhado com as melhores práticas do mercado.
+                  {t('about.resumo.p4')}
                 </p>
               </>
             ) : (
               <div style={{ marginTop: '1rem', marginBottom: '1.5rem' }}>
                 <div style={{ marginBottom: '1rem' }}>
-                  {['Python', 'FastAPI', 'NodeJS', 'Baileys', 'SQL', 'Git', 'Docker', 'Spring Boot', 'NestJS', 'AWS', 'React', 'Tailwind', 'React Router', 'Java', 'Linux', 'Windows', 'SQL Server', 'Tomcat', 'Zabbix', 'styled-components', 'HTML', 'CSS', 'JavaScript'].map((tech, index) => (
+                  {t('about.skills.technical').map((tech, index) => (
                     <span key={index} className="tech-tag" style={{ marginRight: '0.5rem', marginBottom: '0.5rem', display: 'inline-block' }}>{tech}</span>
                   ))}
                 </div>
                 <div>
-                  {['Liderança', 'Comunicação', 'Resiliência', 'Resolução de problemas', 'Pensamento crítico', 'Pensamento analítico', 'Inteligência emocional'].map((skill, index) => (
+                  {t('about.skills.soft').map((skill, index) => (
                     <span key={index} className="tech-tag" style={{ marginRight: '0.5rem', marginBottom: '0.5rem', display: 'inline-block' }}>{skill}</span>
                   ))}
                 </div>
@@ -194,7 +203,7 @@ function Home() {
         </div>
       </section>
       <section className="experience-section">
-        <h2 className="experience-title">Minhas Experiências:</h2>
+        <h2 className="experience-title">{t('experience.title')}</h2>
         <div className="experience-content">
           <div className="experience-companies">
             {companies.map((company, index) => (
@@ -234,19 +243,19 @@ function Home() {
                 )}
               </div>
             ) : (
-              <p className="experience-placeholder">Selecione uma empresa para ver os detalhes</p>
+              <p className="experience-placeholder">{t('experience.placeholder')}</p>
             )}
           </div>
         </div>
       </section>
 
       <section className="projects-section">
-      <h2 className="about-title">Meus Projetos:</h2>
+      <h2 className="about-title">{t('projects.title')}</h2>
       <div className="projects-content">
         <div className="projects-companies">
           <div className="projects-buttons">
             {Object.keys(projectsButton).sort().map((projectKey) => (
-              <button
+            <button 
                 key={projectKey}
                 className={`project-button ${selectedProject === projectKey ? 'active' : ''}`}
                 onClick={() => setSelectedProject(projectKey)}
@@ -266,7 +275,7 @@ function Home() {
               
               return (
                 <div className="experience-info">
-                  <div className="experience-description">
+                <div className="experience-description">
                     {groups.map((group, groupIndex) => {
                       const expandKey = `${selectedProject}-${groupIndex}`
                       const isExpanded = expandedProjects[expandKey] || false
@@ -294,8 +303,8 @@ function Home() {
                               {group.descriptions.map((desc, descIndex) => (
                                 <div key={descIndex} className="experience-text">
                                   <span className="bullet-arrow">→</span> {desc}
-                                </div>
-                              ))}
+                    </div>
+                  ))}
                             </div>
                           )}
                         </div>
@@ -304,7 +313,7 @@ function Home() {
                   </div>
                 </div>
               )
-            })() : (<p className="project-placeholder">Selecione um projeto para ver os detalhes</p>)}
+            })() : (<p className="project-placeholder">{t('projects.placeholder')}</p>)}
           </div>
           
         </div>

@@ -2,14 +2,18 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import emailjs from '@emailjs/browser'
 import { EMAILJS_CONFIG } from '../../config/emailjs.config'
+import { useLanguage } from '../../contexts/LanguageContext'
+import { getTranslation } from '../../translations'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import './Orcamento.css'
 
 function Orcamento() {
   const navigate = useNavigate()
-  const fullText = "Precisando de um sistema ou automação para o seu negócio?"
-  const successText = "Solicitação enviada com sucesso! Entraremos em contato."
+  const { language } = useLanguage()
+  const t = (path) => getTranslation(language, path)
+  const fullText = t('orcamento.intro.question')
+  const successText = t('orcamento.success.message')
   const [displayedText, setDisplayedText] = useState('')
   const [displayedSuccessText, setDisplayedSuccessText] = useState('')
   const [showForm, setShowForm] = useState(false)
@@ -25,6 +29,7 @@ function Orcamento() {
 
   // Typing effect
   useEffect(() => {
+    setDisplayedText('')
     let currentIndex = 0
     const typingInterval = setInterval(() => {
       if (currentIndex < fullText.length) {
@@ -36,14 +41,14 @@ function Orcamento() {
     }, 50) // Velocidade de digitação (50ms por letra - mais rápido)
 
     return () => clearInterval(typingInterval)
-  }, [])
+  }, [fullText])
 
   const handleButtonClick = () => {
     // Rastreia evento InitiateCheckout no Meta Pixel
     if (window.fbq) {
       window.fbq('track', 'InitiateCheckout', {
-        content_name: 'Solicitação de Orçamento',
-        content_category: 'Serviços'
+        content_name: t('orcamento.pixel.checkout'),
+        content_category: language === 'pt-BR' ? 'Serviços' : 'Services'
       });
     }
 
@@ -74,8 +79,8 @@ function Orcamento() {
       // Rastreia evento Lead no Meta Pixel
       if (window.fbq) {
         window.fbq('track', 'Lead', {
-          content_name: 'Formulário de Orçamento',
-          content_category: 'Contato'
+          content_name: t('orcamento.pixel.lead'),
+          content_category: language === 'pt-BR' ? 'Contato' : 'Contact'
         });
       }
 
@@ -100,7 +105,7 @@ function Orcamento() {
       setIsSubmitting(false)
     } catch (error) {
       console.error('Erro ao enviar e-mail:', error)
-      alert('Erro ao enviar solicitação. Por favor, tente novamente.')
+      alert(t('orcamento.form.error'))
       setIsSubmitting(false)
     }
   }
@@ -122,10 +127,11 @@ function Orcamento() {
     // Pequeno delay para garantir que os estados foram resetados
     setTimeout(() => {
       // Reinicia o efeito de digitação
+      const currentFullText = t('orcamento.intro.question')
       let currentIndex = 0
       const typingInterval = setInterval(() => {
-        if (currentIndex < fullText.length) {
-          setDisplayedText(fullText.slice(0, currentIndex + 1))
+        if (currentIndex < currentFullText.length) {
+          setDisplayedText(currentFullText.slice(0, currentIndex + 1))
           currentIndex++
         } else {
           clearInterval(typingInterval)
@@ -165,7 +171,9 @@ function Orcamento() {
 
   // Função para renderizar o texto de sucesso com palavras em laranja
   const renderSuccessTextWithHighlight = (text) => {
-    const highlightedWords = ['enviada', 'sucesso', 'contato']
+    const highlightedWords = language === 'pt-BR' 
+      ? ['enviada', 'sucesso', 'contato'] 
+      : ['sent', 'success', 'contact']
     // Divide por espaços e quebras de linha, mantendo os separadores
     const parts = text.split(/(\s+|\n)/)
     
@@ -185,7 +193,9 @@ function Orcamento() {
 
   // Função para renderizar o texto com palavras em laranja
   const renderTextWithHighlight = (text) => {
-    const highlightedWords = ['sistema', 'automação']
+    const highlightedWords = language === 'pt-BR' 
+      ? ['sistema', 'automação'] 
+      : ['system', 'automation']
     const words = text.split(/(\s+)/)
     
     return words.map((word, index) => {
@@ -206,13 +216,13 @@ function Orcamento() {
       <main className="orcamento-main">
         {!showForm && !showSuccess && (
           <section className={`orcamento-intro ${isAnimating ? 'fade-out-up' : ''}`}>
-            <p className="orcamento-intro-text">Você está</p>
+            <p className="orcamento-intro-text">{t('orcamento.intro.prefix')}</p>
             <h1 className="orcamento-title">
               {renderTextWithHighlight(displayedText)}
               <span className="cursor">|</span>
             </h1>
             <button className="orcamento-button" onClick={handleButtonClick}>
-              Solicite um orçamento
+              {t('orcamento.intro.button')}
             </button>
           </section>
         )}
@@ -225,10 +235,10 @@ function Orcamento() {
             {displayedSuccessText.length === successText.length && (
               <div className="success-buttons">
                 <button className="success-button" onClick={handleGoToHome}>
-                  Sobre mim
+                  {t('orcamento.success.buttons.about')}
                 </button>
                 <button className="success-button" onClick={handleNewOrcamento}>
-                  Novo orçamento
+                  {t('orcamento.success.buttons.new')}
                 </button>
               </div>
             )}
@@ -238,29 +248,29 @@ function Orcamento() {
           <section className="orcamento-form-section">
             <div className="form-container">
               <div className="form-explanation">
-                <h2 className="explanation-title">Precisa de um bot/robô?</h2>
+                <h2 className="explanation-title">{t('orcamento.form.botTitle')}</h2>
                 <p className="explanation-text">
-                  Descreva em <span className="highlight-orange">detalhes</span> o que precisa ser automatizado <span className="highlight-orange">(quais passos manuais gostaria de automatizar).</span>
+                  {t('orcamento.form.botText1')} <span className="highlight-orange">{t('orcamento.form.botText1Highlight')}</span> {t('orcamento.form.botText1After')} <span className="highlight-orange">{t('orcamento.form.botText2Highlight')}</span>
                 </p>
                 <p className="explanation-text">
-                  Mencione <span className="highlight-orange">site</span> e quais <span className="highlight-orange">passos/processos</span> gostaria de automatizar
+                  {t('orcamento.form.botText3')} <span className="highlight-orange">{t('orcamento.form.botText3Highlight')}</span> {t('orcamento.form.botText3After')} <span className="highlight-orange">{t('orcamento.form.botText4Highlight')}</span> {t('orcamento.form.botText4After')}
                 </p>
 
-                <h2 className="explanation-title" style={{ marginTop: '2rem' }}>Precisa de um sistema?</h2>
+                <h2 className="explanation-title" style={{ marginTop: '2rem' }}>{t('orcamento.form.systemTitle')}</h2>
                 <p className="explanation-text">
-                  Descreva a <span className="highlight-orange">visão</span> ou quais <span className="highlight-orange">funcionalidades</span> imagina serem necessárias;
+                  {t('orcamento.form.systemText1')} <span className="highlight-orange">{t('orcamento.form.systemText1Highlight')}</span> {t('orcamento.form.systemText1After')} <span className="highlight-orange">{t('orcamento.form.systemText2Highlight')}</span> {t('orcamento.form.systemText2After')}
                 </p>
                 <p className="explanation-text">
-                  Quero um sistema para <span className="highlight-orange">Fazer X,Y,Z</span>
+                  {t('orcamento.form.systemText3')} <span className="highlight-orange">{t('orcamento.form.systemText3Highlight')}</span>
                 </p>
                 <p className="explanation-text">
-                  Esse sistema deve me <span className="highlight-orange">permitir fazer A,B,C,D</span>
+                  {t('orcamento.form.systemText4')} <span className="highlight-orange">{t('orcamento.form.systemText4Highlight')}</span>
                 </p>
               </div>
               <div className="form-wrapper">
                 <form className="orcamento-form" onSubmit={handleFormSubmit}>
                   <div className="form-field">
-                    <label htmlFor="nome" className="form-label">Nome Completo:</label>
+                    <label htmlFor="nome" className="form-label">{t('orcamento.form.fields.nome')}</label>
                     <input
                       type="text"
                       id="nome"
@@ -274,7 +284,7 @@ function Orcamento() {
 
                   <div className="form-field">
                     <label htmlFor="telefone" className="form-label">
-                      Telefone <span className="highlight-orange">(WhatsApp)</span>:
+                      {t('orcamento.form.fields.telefone')} <span className="highlight-orange">{t('orcamento.form.fields.telefoneHighlight')}</span>:
                     </label>
                     <input
                       type="tel"
@@ -291,7 +301,7 @@ function Orcamento() {
 
                   <div className="form-field">
                     <label htmlFor="email" className="form-label">
-                      Seu email <span className="highlight-orange">para retorno</span>:
+                      {t('orcamento.form.fields.email')} <span className="highlight-orange">{t('orcamento.form.fields.emailHighlight')}</span>:
                     </label>
                     <input
                       type="email"
@@ -306,7 +316,7 @@ function Orcamento() {
 
                   <div className="form-field">
                     <label htmlFor="demanda" className="form-label">
-                      Descreva a sua <span className="highlight-orange">demanda</span>:
+                      {t('orcamento.form.fields.demanda')} <span className="highlight-orange">{t('orcamento.form.fields.demandaHighlight')}</span>:
                     </label>
                     <textarea
                       id="demanda"
@@ -318,12 +328,12 @@ function Orcamento() {
                       required
                     />
                     <p className="form-hint">
-                      Descreva exatamente o que está buscando. Quanto mais detalhes, mais rápido conseguimos te dar um retorno. Descrições muito vagas irão atrasar todo o processo. Favor incluir detalhes!
+                      {t('orcamento.form.fields.demandaHint')}
                     </p>
                   </div>
 
                   <button type="submit" className="orcamento-submit-button" disabled={isSubmitting}>
-                    {isSubmitting ? 'Enviando...' : 'Enviar solicitação'}
+                    {isSubmitting ? t('orcamento.form.submit.sending') : t('orcamento.form.submit.send')}
                   </button>
                 </form>
               </div>
