@@ -175,6 +175,19 @@ export const getProjectsByLanguage = (language) => {
           : 'The course covers fundamental Spring Boot concepts, including dependency configuration, project structuring, entity creation, repositories, services, REST controllers, data validation, practical Lombok usage and development best practices with Java and Spring Framework.',
       ],
     },
+    'NodeJS & Express & MongoDB': {
+      description: [
+        <a key="link-nodejs-course" href="https://www.youtube.com/playlist?list=PLChWda6UqRfBOacsJPFSWie66iBnz8R37" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none' }}>
+          youtube.com/meu-curso-nodejs
+        </a>,
+        isPT
+          ? 'Criei uma playlist completa de curso do zero sobre desenvolvimento de CRUD com Node.js, Express e MongoDB. O curso cobre desde os conceitos fundamentais do Node.js, configuração do ambiente de desenvolvimento, configuração do banco de dados MongoDB, toda a configuração necessária, até a implementação completa de operações CRUD (Create, Read, Update, Delete) de usuários.'
+          : 'I created a complete course playlist from scratch on CRUD development with Node.js, Express and MongoDB. The course covers from fundamental Node.js concepts, development environment configuration, MongoDB database configuration, all necessary configuration, to complete implementation of CRUD operations (Create, Read, Update, Delete) for users.',
+        isPT
+          ? 'O curso aborda conceitos fundamentais do Node.js e Express, incluindo configuração de dependências, estruturação de projetos, criação de rotas e controladores, integração com MongoDB, implementação de autenticação com hash de senhas utilizando bcrypt, validação de dados e boas práticas de desenvolvimento com Node.js e Express.'
+          : 'The course covers fundamental Node.js and Express concepts, including dependency configuration, project structuring, route and controller creation, MongoDB integration, authentication implementation with password hashing using bcrypt, data validation and development best practices with Node.js and Express.',
+      ],
+    },
   }
 
   return projects
