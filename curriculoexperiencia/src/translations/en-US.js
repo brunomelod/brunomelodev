@@ -30,7 +30,7 @@ export const enUS = {
       css: "CSS"
     },
     skills: {
-      technical: ['Python', 'FastAPI', 'NodeJS', 'Baileys', 'SQL', 'Git', 'Docker', 'Spring Boot', 'NestJS', 'AWS', 'React', 'Tailwind', 'React Router', 'Java', 'Linux', 'Windows', 'SQL Server', 'Tomcat', 'Zabbix', 'styled-components', 'HTML', 'CSS', 'JavaScript'],
+      technical: ['Python', 'FastAPI', 'NodeJS', 'Express', 'MongoDB', 'Baileys', 'SQL', 'Git', 'Docker', 'Spring Boot', 'NestJS', 'AWS', 'React', 'Tailwind', 'React Router', 'Java', 'Linux', 'Windows', 'SQL Server', 'Tomcat', 'Zabbix', 'styled-components', 'HTML', 'CSS', 'JavaScript'],
       soft: ['Leadership', 'Communication', 'Resilience', 'Problem solving', 'Critical thinking', 'Analytical thinking', 'Emotional intelligence']
     }
   },
