@@ -4,6 +4,27 @@ export const getProjectsByLanguage = (language) => {
   const isPT = language === 'pt-BR'
 
   const projects = {
+    'Projeto Científico': {
+      first: true,
+      label: { 'pt-BR': 'Projeto Científico', 'en-US': 'Scientific Project' },
+      description: [
+        <span key="link-calculagro" className="company-name" style={{ display: 'block' }}>
+          CalculAgro
+        </span>,
+        isPT
+          ? 'O CalculAgro é um projeto de estudo científico privado em desenvolvimento: sistema web automatizado para estimativa do balanço anual de carbono no solo (ΔSOC) em agricultura, com sensoriamento remoto, modelos RothC/IPCC e simulação de Monte Carlo para quantificação de incertezas. O trabalho está sendo desenvolvido em parceria com consultora com Doutorado em Agronomia dos Estados Unidos, com foco na validação científica dos modelos, refinamento metodológico e preparação de material para publicação acadêmica.'
+          : 'CalculAgro is a private scientific study project in development: an automated web system for annual soil carbon balance (ΔSOC) estimation in agriculture, with remote sensing, RothC/IPCC models, and Monte Carlo simulation for uncertainty quantification. The work is being developed in partnership with a consultant holding a PhD in Agronomy from the United States, with a focus on scientific validation of the models, methodological refinement, and preparation of material for academic publication.',
+        isPT
+          ? 'Desenvolvi a integração automática com as APIs dos três provedores de dados geoespaciais e climáticos: Sentinel-2 via API do Copernicus Data Space Ecosystem (CDSE) para obtenção de imagens e cálculo server-side do NDVI (com filtro de cobertura de nuvens); SoilGrids (250 m) via Google Earth Engine para extração da fração de argila do solo; e TerraClimate para temperatura e precipitação mensais no período e na área selecionada. O backend em FastAPI orquestra essas chamadas, normaliza os dados por polígono ou coordenadas e alimenta o pipeline de cálculo.'
+          : 'I built automatic integration with the APIs of three geospatial and climate data providers: Sentinel-2 through the Copernicus Data Space Ecosystem (CDSE) API for imagery retrieval and server-side NDVI calculation (with cloud-cover filtering); SoilGrids (250 m) via Google Earth Engine for soil clay fraction extraction; and TerraClimate for monthly temperature and precipitation over the selected period and area. The FastAPI backend orchestrates these calls, normalizes data by polygon or coordinates, and feeds the calculation pipeline.',
+        isPT
+          ? 'Implementei modelos de balanço de carbono baseados em RothC/IPCC (biomassa a partir de NDVI, estabilização por argila, perdas por decomposição) e simulação de Monte Carlo com 10.000 iterações para propagação de incertezas e intervalos de confiança de 95% nos resultados (ΔSOC e CO₂e).'
+          : 'I implemented RothC/IPCC-based carbon balance models (biomass from NDVI, clay-based stabilization, decomposition losses) and Monte Carlo simulation with 10,000 iterations for uncertainty propagation and 95% confidence intervals on results (ΔSOC and CO₂e).',
+        isPT
+          ? 'Desenvolvi o frontend em HTML, CSS e JavaScript com Leaflet.js para seleção interativa de área no mapa (polígono), entrada por coordenadas, geocoding reverso e exibição dos resultados com intervalos de incerteza, consumindo a API FastAPI.'
+          : 'I developed the frontend in HTML, CSS and JavaScript with Leaflet.js for interactive map area selection (polygon), coordinate input, reverse geocoding, and results display with uncertainty intervals, consuming the FastAPI API.',
+      ],
+    },
     'React & Tailwind CSS': {
       description: [
         <a key="link-brunomelodev" href="https://www.brunomelodev.com.br" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none' }}>

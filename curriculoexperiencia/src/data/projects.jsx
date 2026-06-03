@@ -1,6 +1,18 @@
 import React from 'react'
 
 export const projectsButton = {
+  'Projeto Científico': {
+    first: true,
+    description: [
+      <span key="link-calculagro" className="company-name" style={{ display: 'block' }}>
+        CalculAgro
+      </span>,
+      'O CalculAgro é um projeto de estudo científico privado em desenvolvimento: sistema web automatizado para estimativa do balanço anual de carbono no solo (ΔSOC) em agricultura, com sensoriamento remoto, modelos RothC/IPCC e simulação de Monte Carlo para quantificação de incertezas. O trabalho está sendo desenvolvido em parceria com consultora com Doutorado em Agronomia dos Estados Unidos, com foco na validação científica dos modelos, refinamento metodológico e preparação de material para publicação acadêmica.',
+      'Desenvolvi a integração automática com as APIs dos três provedores de dados geoespaciais e climáticos: Sentinel-2 via API do Copernicus Data Space Ecosystem (CDSE) para obtenção de imagens e cálculo server-side do NDVI (com filtro de cobertura de nuvens); SoilGrids (250 m) via Google Earth Engine para extração da fração de argila do solo; e TerraClimate para temperatura e precipitação mensais no período e na área selecionada. O backend em FastAPI orquestra essas chamadas, normaliza os dados por polígono ou coordenadas e alimenta o pipeline de cálculo.',
+      'Implementei modelos de balanço de carbono baseados em RothC/IPCC (biomassa a partir de NDVI, estabilização por argila, perdas por decomposição) e simulação de Monte Carlo com 10.000 iterações para propagação de incertezas e intervalos de confiança de 95% nos resultados (ΔSOC e CO₂e).',
+      'Desenvolvi o frontend em HTML, CSS e JavaScript com Leaflet.js para seleção interativa de área no mapa (polígono), entrada por coordenadas, geocoding reverso e exibição dos resultados com intervalos de incerteza, consumindo a API FastAPI.',
+    ],
+  },
   'React & Tailwind CSS': {
     description: [
       <a key="link-brunomelodev" href="https://www.brunomelodev.com.br" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none' }}>

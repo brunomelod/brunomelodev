@@ -99,13 +99,28 @@ function Home() {
     }))
   }
 
+  const getProjectLabel = (projectKey) => {
+    const label = projectsButton[projectKey]?.label
+    if (!label) return projectKey
+    if (typeof label === 'string') return label
+    return label[language] ?? projectKey
+  }
+
+  const sortProjectKeys = (keys) =>
+    [...keys].sort((a, b) => {
+      const aFirst = projectsButton[a]?.first ? 1 : 0
+      const bFirst = projectsButton[b]?.first ? 1 : 0
+      if (aFirst !== bFirst) return bFirst - aFirst
+      return a.localeCompare(b)
+    })
+
   const groupProjectDescriptions = (descriptions) => {
     const groups = []
     let currentLink = null
     let currentDescriptions = []
     
     descriptions.forEach((item, index) => {
-      if (React.isValidElement(item) && item.type === 'a') {
+      if (React.isValidElement(item) && (item.type === 'a' || item.type === 'span')) {
         if (currentLink) {
           groups.push({ 
             link: currentLink, 
@@ -254,14 +269,14 @@ function Home() {
       <div className="projects-content">
         <div className="projects-companies">
           <div className="projects-buttons">
-            {Object.keys(projectsButton).sort().map((projectKey) => (
+            {sortProjectKeys(Object.keys(projectsButton)).map((projectKey) => (
             <button 
                 key={projectKey}
                 className={`project-button ${selectedProject === projectKey ? 'active' : ''}`}
                 onClick={() => setSelectedProject(projectKey)}
               >
                 {selectedProject === projectKey && <span className="pipe-indicator">|</span>}
-                {projectKey}
+                {getProjectLabel(projectKey)}
               </button>
             ))}
           </div>
