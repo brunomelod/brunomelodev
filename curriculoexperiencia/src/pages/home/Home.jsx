@@ -15,7 +15,7 @@ function Home() {
   const [displayedName, setDisplayedName] = useState('')
   const [selectedCompany, setSelectedCompany] = useState(null)
   const [selectedAboutTab, setSelectedAboutTab] = useState('resumo')
-  const [selectedProject, setSelectedProject] = useState('HTML & CSS')
+  const [selectedProject, setSelectedProject] = useState('Projeto Científico')
   const [expandedProjects, setExpandedProjects] = useState({})
   const [hasAnimated, setHasAnimated] = useState({})
 

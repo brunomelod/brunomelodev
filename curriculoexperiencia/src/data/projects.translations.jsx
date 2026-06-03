@@ -6,7 +6,7 @@ export const getProjectsByLanguage = (language) => {
   const projects = {
     'Projeto Científico': {
       first: true,
-      label: { 'pt-BR': 'Projeto Científico', 'en-US': 'Scientific Project' },
+      label: { 'pt-BR': 'Projeto Científico - Privado', 'en-US': 'Scientific Project - Private' },
       description: [
         <span key="link-calculagro" className="company-name" style={{ display: 'block' }}>
           CalculAgro
