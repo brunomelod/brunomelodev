@@ -15,7 +15,7 @@ export const projectsButton = {
         capil.com.br
       </a>,
       'Desenvolvi uma landing page utilizando React e Tailwind CSS, criando uma interface moderna e responsiva. Implementei integração com EmailJS para envio de formulários de contato, garantindo uma experiência de usuário fluida e eficiente na captura de leads.',
-      <a key="link-drtranscribe" href="https://www.drtranscribe.com.br" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
+      <a key="link-drtranscribe" href="https://drtranscribe-rtsy.vercel.app" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
         drtranscribe.com.br
       </a>,
       'Arquitetei e desenvolvi um sistema SaaS completo do zero, implementando toda a arquitetura frontend com ReactJS e Tailwind CSS, e backend com FastAPI em Python. A solução integra inteligência artificial para transcrição de consultas médicas, sistema de gestão de agendamentos clínicos, módulo de gestão de pacientes com cadastro e armazenamento de documentos, além de funcionalidade de telemedicina com salas de reunião virtuais e compartilhamento de links de acesso.',

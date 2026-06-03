@@ -24,7 +24,7 @@ export const experiences = {
   },
   'DrTranscribe': {
     period: 'JUN 2025 - Até o momento',
-    website: 'www.drtranscribe.com.br',
+    website: 'www.drtranscribe.com.br - Projeto pessoal',
     description: [
       'Arquitetei e desenvolvi um sistema SaaS completo do zero, implementando toda a arquitetura frontend com ReactJS e Tailwind CSS, e backend com FastAPI em Python. A solução integra inteligência artificial para transcrição de consultas médicas, sistema de gestão de agendamentos clínicos, módulo de gestão de pacientes com cadastro e armazenamento de documentos, além de funcionalidade de telemedicina com salas de reunião virtuais e compartilhamento de links de acesso.',
       'Desenvolvi APIs RESTful em Python utilizando FastAPI, implementando arquitetura escalável com manipulação segura e eficiente de dados, seguindo padrões de design e boas práticas de desenvolvimento.',

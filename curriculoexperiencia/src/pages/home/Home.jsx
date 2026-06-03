@@ -198,7 +198,7 @@ function Home() {
             )}
           </div>
           <div className="about-photo">
-            <img src="/perfil.png" alt="Bruno Melo" />
+            <img src="/perfil.jpeg" alt="Bruno Melo" />
           </div>
         </div>
       </section>
