@@ -6,10 +6,10 @@ export const getProjectsByLanguage = (language) => {
   const projects = {
     'Projeto Científico': {
       first: true,
-      label: { 'pt-BR': 'Projeto Científico - Privado', 'en-US': 'Scientific Project - Private' },
+      label: { 'pt-BR': 'Projeto Científico', 'en-US': 'Scientific Project' },
       description: [
         <span key="link-calculagro" className="company-name" style={{ display: 'block' }}>
-          CalculAgro
+          CalculAgro - Projeto Privado
         </span>,
         isPT
           ? 'O CalculAgro é um projeto de estudo científico privado em desenvolvimento: sistema web automatizado para estimativa do balanço anual de carbono no solo (ΔSOC) em agricultura, com sensoriamento remoto, modelos RothC/IPCC e simulação de Monte Carlo para quantificação de incertezas. O trabalho está sendo desenvolvido em parceria com consultora com Doutorado em Agronomia dos Estados Unidos, com foco na validação científica dos modelos, refinamento metodológico e preparação de material para publicação acadêmica.'
