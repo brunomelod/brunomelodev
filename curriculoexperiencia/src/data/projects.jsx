@@ -29,6 +29,14 @@ export const projectsButton = {
         shinewindows.com.br
       </a>,
       'Migrei um sistema de CRM completo de PHP para React com Tailwind CSS, implementando toda a arquitetura frontend do zero. Desenvolvi o backend completo em Python utilizando FastAPI, seguindo padrões REST e boas práticas de desenvolvimento. A migração resultou em uma aplicação moderna, escalável e de melhor performance, mantendo todas as funcionalidades do sistema original enquanto melhora significativamente a experiência do usuário.',
+      <a key="link-fitmark" href="https://club.fitmark.com.br" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
+        club.fitmark.com.br
+      </a>,
+      'Desenvolvi um sistema de gestão para academias com frontend em React, TypeScript e Tailwind CSS, e backend em Node.js, JavaScript e Express. O portal corporativo Fitmark Club centraliza materiais de marketing, comunicados da matriz e recursos das unidades em uma interface moderna e responsiva.',
+      <a key="link-sheepz" href="https://sheepz.com.br/admin/login" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
+        sheepz.com.br
+      </a>,
+      'Desenvolvi um sistema de IA para marketing digital com frontend em React, TypeScript e Tailwind CSS, e backend em Node.js, JavaScript e Express, com painel administrativo para gestão de campanhas e automação de conteúdo.',
     ],
   },
   'React & styled-components': {
