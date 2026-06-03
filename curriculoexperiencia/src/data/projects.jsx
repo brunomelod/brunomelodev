@@ -121,6 +121,14 @@ export const projectsButton = {
       </a>,
       'Criei uma playlist completa de curso do zero sobre desenvolvimento de CRUD com Node.js, Express e MongoDB. O curso cobre desde os conceitos fundamentais do Node.js, configuração do ambiente de desenvolvimento, configuração do banco de dados MongoDB, toda a configuração necessária, até a implementação completa de operações CRUD (Create, Read, Update, Delete) de usuários.',
       'O curso aborda conceitos fundamentais do Node.js e Express, incluindo configuração de dependências, estruturação de projetos, criação de rotas e controladores, integração com MongoDB, implementação de autenticação com hash de senhas utilizando bcrypt, validação de dados e boas práticas de desenvolvimento com Node.js e Express.',
+      <a key="link-fitmark-node" href="https://club.fitmark.com.br" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
+        club.fitmark.com.br
+      </a>,
+      'Desenvolvi todo o backend do sistema de gestão para academias Fitmark Club utilizando Node.js, JavaScript, Express e MongoDB. Toda a arquitetura server-side — APIs REST, autenticação, gestão de unidades, materiais e comunicados — foi implementada com essa stack, com persistência de dados no MongoDB.',
+      <a key="link-sheepz-node" href="https://sheepz.com.br/admin/login" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
+        sheepz.com.br
+      </a>,
+      'Desenvolvi todo o backend do sistema de IA para marketing digital Sheepz utilizando Node.js, JavaScript, Express e MongoDB. Toda a arquitetura server-side — APIs REST, painel administrativo, gestão de campanhas e automação de conteúdo — foi implementada com essa stack, com persistência de dados no MongoDB.',
     ],
   }
 }

@@ -198,6 +198,18 @@ export const getProjectsByLanguage = (language) => {
         isPT
           ? 'O curso aborda conceitos fundamentais do Node.js e Express, incluindo configuração de dependências, estruturação de projetos, criação de rotas e controladores, integração com MongoDB, implementação de autenticação com hash de senhas utilizando bcrypt, validação de dados e boas práticas de desenvolvimento com Node.js e Express.'
           : 'The course covers fundamental Node.js and Express concepts, including dependency configuration, project structuring, route and controller creation, MongoDB integration, authentication implementation with password hashing using bcrypt, data validation and development best practices with Node.js and Express.',
+        <a key="link-fitmark-node" href="https://club.fitmark.com.br" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
+          club.fitmark.com.br
+        </a>,
+        isPT
+          ? 'Desenvolvi todo o backend do sistema de gestão para academias Fitmark Club utilizando Node.js, JavaScript, Express e MongoDB. Toda a arquitetura server-side — APIs REST, autenticação, gestão de unidades, materiais e comunicados — foi implementada com essa stack, com persistência de dados no MongoDB.'
+          : 'I developed the entire backend of the Fitmark Club gym management system using Node.js, JavaScript, Express and MongoDB. The full server-side architecture — REST APIs, authentication, unit management, materials and corporate announcements — was built with this stack, with data persistence in MongoDB.',
+        <a key="link-sheepz-node" href="https://sheepz.com.br/admin/login" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
+          sheepz.com.br
+        </a>,
+        isPT
+          ? 'Desenvolvi todo o backend do sistema de IA para marketing digital Sheepz utilizando Node.js, JavaScript, Express e MongoDB. Toda a arquitetura server-side — APIs REST, painel administrativo, gestão de campanhas e automação de conteúdo — foi implementada com essa stack, com persistência de dados no MongoDB.'
+          : 'I developed the entire backend of the Sheepz AI digital marketing system using Node.js, JavaScript, Express and MongoDB. The full server-side architecture — REST APIs, admin panel, campaign management and content automation — was built with this stack, with data persistence in MongoDB.',
       ],
     },
   }
