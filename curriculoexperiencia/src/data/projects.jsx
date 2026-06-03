@@ -124,11 +124,11 @@ export const projectsButton = {
       <a key="link-fitmark-node" href="https://club.fitmark.com.br" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
         club.fitmark.com.br
       </a>,
-      'Desenvolvi todo o backend do sistema de gestão para academias Fitmark Club utilizando Node.js, JavaScript, Express e MongoDB. Toda a arquitetura server-side — APIs REST, autenticação, gestão de unidades, materiais e comunicados — foi implementada com essa stack, com persistência de dados no MongoDB.',
+      'Desenvolvi todo o backend do sistema de gestão para academias Fitmark Club utilizando Node.js, JavaScript, Express e PostgreSQL. Toda a arquitetura server-side — APIs REST, autenticação, gestão de unidades, materiais e comunicados — foi implementada com essa stack, com persistência de dados no PostgreSQL.',
       <a key="link-sheepz-node" href="https://sheepz.com.br/admin/login" target="_blank" rel="noopener noreferrer" className="company-name" style={{ display: 'block', textDecoration: 'none', marginTop: '1rem' }}>
         sheepz.com.br
       </a>,
-      'Desenvolvi todo o backend do sistema de IA para marketing digital Sheepz utilizando Node.js, JavaScript, Express e MongoDB. Toda a arquitetura server-side — APIs REST, painel administrativo, gestão de campanhas e automação de conteúdo — foi implementada com essa stack, com persistência de dados no MongoDB.',
+      'Desenvolvi todo o backend do sistema de IA para marketing digital Sheepz utilizando Node.js, JavaScript, Express e PostgreSQL. Toda a arquitetura server-side — APIs REST, painel administrativo, gestão de campanhas e automação de conteúdo — foi implementada com essa stack, com persistência de dados no PostgreSQL.',
     ],
   }
 }
